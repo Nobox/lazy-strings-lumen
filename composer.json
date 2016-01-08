@@ -23,7 +23,7 @@
         }
     ],
     "require": {
-        "php": ">=5.5.9",
+        "php": ">=5.4.0",
         "nobox/lazy-strings": "^5.0"
     },
     "require-dev": {
@@ -38,6 +38,11 @@
     "autoload-dev": {
         "psr-4": {
             "Nobox\\LazyStrings\\Tests\\": "tests/"
+        }
+    },
+    "config": {
+        "platform": {
+            "php": "5.4"
         }
     },
     "scripts": {

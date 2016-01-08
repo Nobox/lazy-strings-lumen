@@ -10,11 +10,17 @@
 |
 */
 
-Route::group(['namespace' => 'Nobox\LazyStrings\Http\Controllers', 'prefix' => 'lazy'], function () {
-    $routeName = Config::get('lazy-strings.strings-route');
+$routeName = Config::get('lazy-strings.strings-route');
 
-    Route::get($routeName, [
-        'as' => 'lazy.deploy',
-        'uses' => 'LazyStringsController@deploy'
-    ]);
+Route::get($routeName, function () {
+    $lazyStrings = $this->app['lazy-strings'];
+    $lazyStrings->generate();
+
+    $metadata = $lazyStrings->getMetadata();
+
+    $viewData['lazyVersion'] = $lazyStrings::VERSION;
+    $viewData['refreshedBy'] = $metadata['refreshedBy'];
+    $viewData['refreshedOn'] = $metadata['refreshedOn'];
+
+    return View::make('lazy-strings::lazy', $viewData);
 });
