@@ -7,16 +7,7 @@
         <meta name="description" content="">
         <meta name="author" content="">
 
-        <title>Lazy Strings</title>
-
-        <!-- Bootstrap core CSS -->
-        <link href="{{ asset('vendor/nobox/lazy-strings/css/bootstrap.min.css') }}" rel="stylesheet">
-
-        <!-- Custom styles for this template -->
-        <link href="{{ asset('vendor/nobox/lazy-strings/css/cover.css') }}" rel="stylesheet">
-
-        <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-        <script src="{{ asset('vendor/nobox/lazy-strings/js/ie10-viewport-bug-workaround.js') }}"></script>
+        <title>Lazy Strings v{{ $lazyVersion }}</title>
 
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
         <link href="{{ asset('lazy-strings/cover.css') }}" rel="stylesheet">
@@ -32,7 +23,7 @@
             <div class="site-wrapper-inner">
                 <div class="cover-container">
                     <div class="inner cover">
-                        <h1 class="cover-heading">LazyStrings {{ $lazyVersion }}</h1>
+                        <h1 class="cover-heading">LazyStrings v{{ $lazyVersion }}</h1>
                         <p class="lead">Strings have been generated successfully!</p>
                         <p>Refreshed by: {{ $refreshedBy }}</p>
                         <p>Refreshed on: {{ $refreshedOn }}</p>
