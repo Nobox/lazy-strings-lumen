@@ -9,11 +9,13 @@
 | the strings are generated succesfully.
 |
 */
+use Illuminate\Support\Facades\Config;
+use Illuminate\Support\Facades\App;
 
 $routeName = Config::get('lazy-strings.strings-route');
 
-Route::get($routeName, function () {
-    $lazyStrings = $this->app['lazy-strings'];
+$this->app->get($routeName, function () {
+    $lazyStrings = App::make('lazy-strings');
     $lazyStrings->generate();
 
     $metadata = $lazyStrings->getMetadata();
@@ -22,5 +24,5 @@ Route::get($routeName, function () {
     $viewData['refreshedBy'] = $metadata['refreshedBy'];
     $viewData['refreshedOn'] = $metadata['refreshedOn'];
 
-    return View::make('lazy-strings::lazy', $viewData);
+    return view('lazy-strings.lazy', $viewData);
 });
