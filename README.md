@@ -2,8 +2,6 @@
 
 Lumen service provider for LazyStrings.
 
-[![Build Status](https://travis-ci.org/Nobox/lazy-strings-lumen.svg?branch=1.0)](https://travis-ci.org/Nobox/lazy-strings-lumen)
-
 ## Installation
 Add Lazy Strings to your composer.json file.
 
@@ -12,17 +10,15 @@ composer require nobox/lazy-strings-lumen
 ```
 
 ## Register Lazy Strings
-Register Lazy Strings service provider in the `providers` array located in `config/app.php`
+You must enable facades. Uncomment the line `$app->withFacades();` on `bootstrap/app.php`. Then, register Lazy Strings service provider, also in `bootstrap/app.php`.
 ```php
-'providers' => [
-    Nobox\LazyStrings\LazyStringsServiceProvider::class,
-]
+$app->register('Nobox\LazyStrings\LazyStringsServiceProvider');
 ```
 
 ## Publish configuration and assets
 This package uses some basic configuration and pretty CSS and JS from bootstrap.
 ```bash
-php artisan vendor:publish
+php artisan lazy:publish
 ```
 
 ## Configuration
@@ -38,9 +34,9 @@ Configuration is pretty simple, each configuration item is described below. More
 'target-folder' => 'lazy-strings'
 ```
 
-- `strings-route` This is the route that will be used to generate the strings. Visit `http://my-app.com/lazy/build-copy` and your strings will be updated. By default is `build-copy`. The route will always be under the `lazy` prefix.
+- `strings-route` This is the route that will be used to generate the strings. Visit `http://my-app.com/lazy/build-copy` and your strings will be updated. By default is `lazy/build-copy`.
 ```php
-'strings-route' => 'build-copy'
+'strings-route' => 'lazy/build-copy'
 ```
 
 - `nested` Whether or not you wish your generated strings array to be nested.
@@ -50,11 +46,11 @@ Configuration is pretty simple, each configuration item is described below. More
 
 - `sheets` Here you'll specify all the sheets in your Google doc.
 ```php
-'sheets' => [
+'sheets' => array(
     'en' => [0, 1626663029],
     'es' => 1329731586,
     'pt' => 1443604037
-]
+)
 ```
 
 ## How it works
@@ -77,7 +73,7 @@ Lang::get('lazy.foo'); // returns "Hello!"
 ```
 
 ## Generate your strings
-Each time you need to generate your strings just visit the specified `strings-route` in your configuration. The route will always be under the `lazy` prefix. For example: `http://my-app.com/lazy/build-copy`
+Each time you need to generate your strings just visit the specified `strings-route` in your configuration. For example: `http://my-app.com/lazy/build-copy`.
 
 You can also use the included artisan command `php artisan lazy:deploy`. It will do exactly the same. This is perfect when you're deploying your application with Forge or Envoyer.
 
