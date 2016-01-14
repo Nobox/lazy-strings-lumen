@@ -9,6 +9,13 @@ Add Lazy Strings to your composer.json file.
 composer require nobox/lazy-strings-lumen
 ```
 
+## Lumen versions
+Here's a rundown on the version(s) of lazy strings that you can use on your current installed lumen version.
+
+| Lumen version       | Service Provider version to use    |
+| ------------------- | ---------------------------------- |
+| 5.0                 | `1.0.*`                            |
+
 ## Register Lazy Strings
 You must enable facades. Uncomment the line `$app->withFacades();` on `bootstrap/app.php`. Then, register Lazy Strings service provider, also in `bootstrap/app.php`.
 ```php
