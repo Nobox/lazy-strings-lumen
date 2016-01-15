@@ -42,11 +42,6 @@
             "Nobox\\LazyStrings\\Tests\\": "tests/"
         }
     },
-    "config": {
-        "platform": {
-            "php": "5.4"
-        }
-    },
     "scripts": {
         "test": "phpunit"
     },
