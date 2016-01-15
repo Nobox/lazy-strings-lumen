@@ -17,10 +17,17 @@ Here's a rundown on the version(s) of lazy strings that you can use on your curr
 | 5.0                 | `1.0.*`                            |
 | 5.1                 | `1.1.*`                            |
 
-## Register Lazy Strings
-You must enable facades. Uncomment the line `$app->withFacades();` on `bootstrap/app.php`. Then, register Lazy Strings service provider, also in `bootstrap/app.php`.
+## Register Lazy Strings configuration and service provider
+You must enable facades. Uncomment the line `$app->withFacades();` on `bootstrap/app.php`.
+
+Register Lazy Strings configuration. Add this line on `bootstrap/app.php`. It can go anywhere, I would recommend to add it after `$app->withEloquent();`.
 ```php
-$app->register('Nobox\LazyStrings\LazyStringsServiceProvider');
+$app->configure('lazy-strings');
+```
+
+Finally, register Lazy Strings service provider, also in `bootstrap/app.php`.
+```php
+$app->register(Nobox\LazyStrings\LazyStringsServiceProvider::class);
 ```
 
 ## Publish configuration and assets
