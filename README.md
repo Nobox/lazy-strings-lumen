@@ -92,5 +92,8 @@ Each time you need to generate your strings just visit the specified `strings-ro
 
 You can also use the included artisan command `php artisan lazy:deploy`. It will do exactly the same. This is perfect when you're deploying your application with Forge or Envoyer.
 
+## To-do's
+- Add tests!
+
 ## License
 MIT
