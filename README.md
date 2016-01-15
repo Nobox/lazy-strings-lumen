@@ -15,6 +15,7 @@ Here's a rundown on the version(s) of lazy strings that you can use on your curr
 | Lumen version       | Service Provider version to use    |
 | ------------------- | ---------------------------------- |
 | 5.0                 | `1.0.*`                            |
+| 5.1                 | `1.1.*`                            |
 
 ## Register Lazy Strings
 You must enable facades. Uncomment the line `$app->withFacades();` on `bootstrap/app.php`. Then, register Lazy Strings service provider, also in `bootstrap/app.php`.
