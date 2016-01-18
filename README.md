@@ -16,6 +16,7 @@ Here's a rundown on the version(s) of lazy strings that you can use on your curr
 | ------------------- | ---------------------------------- |
 | 5.0                 | `1.0.*`                            |
 | 5.1                 | `1.1.*`                            |
+| 5.2                 | `1.2.*`                            |
 
 ## Register Lazy Strings configuration and service provider
 You must enable facades. Uncomment the line `$app->withFacades();` on `bootstrap/app.php`.
