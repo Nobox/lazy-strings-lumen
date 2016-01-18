@@ -41,6 +41,7 @@ class LazyPublishCommand extends Command
     {
         $this->publishConfiguration();
         $this->publishView();
+        $this->publishLanguage();
         $this->publishCss();
     }
 
@@ -72,6 +73,19 @@ class LazyPublishCommand extends Command
 
         copy(__DIR__.'/../views/lazy.blade.php', base_path().'/resources/views/lazy-strings/lazy.blade.php');
         $this->info('Published view to '.base_path().'/resources/views/lazy-strings/lazy.blade.php');
+    }
+
+    /**
+     * Publish the language directory if it doesn't exists.
+     *
+     * @return void
+     */
+    private function publishLanguage()
+    {
+        if (!file_exists(base_path().'/resources/lang/')) {
+            mkdir(base_path().'/resources/lang');
+            $this->info('Published language directory in '.base_path().'/resources/lang/');
+        }
     }
 
     /**
