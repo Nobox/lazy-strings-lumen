@@ -26,6 +26,7 @@
         "php": ">=5.5.9",
         "illuminate/support": "5.1.*",
         "illuminate/console": "5.1.*",
+        "laravel/lumen-framework": "5.1.*",
         "nobox/lazy-strings": "^5.0"
     },
     "require-dev": {
