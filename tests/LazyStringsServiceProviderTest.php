@@ -41,8 +41,6 @@ class LazyStringsServiceProviderTest extends TestCase
     {
         $response = $this->call('GET', '/lazy/build-copy');
         $this->assertResponseOk();
-        $this->assertViewHas('refreshedBy');
-        $this->assertViewHas('refreshedOn');
     }
 
     /**
