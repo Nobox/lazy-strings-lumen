@@ -1,5 +1,7 @@
 <?php
 
+require_once __DIR__.'/../vendor/autoload.php';
+
 /*
 |--------------------------------------------------------------------------
 | Create The Application
@@ -19,8 +21,19 @@ $app->withFacades();
 $app->configure('lazy-strings');
 $app->register(Nobox\LazyStrings\LazyStringsServiceProvider::class);
 
-$app->get('/', function () use ($app) {
+$app->get('/', function() use($app) {
     return $app->welcome();
+});
+
+use Illuminate\Support\Facades\Config;
+
+$app->group(['namespace' => 'Nobox\LazyStrings\Http\Controllers', 'prefix' => 'lazy'], function() use($app) {
+    $routeName = Config::get('lazy-strings.strings-route');
+
+    $app->get($routeName, [
+        'as' => 'lazy.deploy',
+        'uses' => 'LazyStringsController@deploy'
+    ]);
 });
 
 return $app;
