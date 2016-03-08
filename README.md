@@ -1,4 +1,5 @@
 # Lazy Strings for Lumen
+[![Build Status](https://travis-ci.org/Nobox/lazy-strings-lumen.svg?branch=1.2)](https://travis-ci.org/Nobox/lazy-strings-lumen)
 
 Lumen service provider for LazyStrings.
 
@@ -92,9 +93,6 @@ Lang::get('lazy.foo'); // returns "Hello!"
 Each time you need to generate your strings just visit the specified `strings-route` in your configuration. The route will always be under the lazy prefix. For example: `http://my-app.com/lazy/build-copy`.
 
 You can also use the included artisan command `php artisan lazy:deploy`. It will do exactly the same. This is perfect when you're deploying your application with Forge or Envoyer.
-
-## To-do's
-- Add tests!
 
 ## License
 MIT
