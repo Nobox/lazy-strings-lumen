@@ -1,5 +1,5 @@
 # Lazy Strings for Lumen
-[![Build Status](https://travis-ci.org/Nobox/lazy-strings-lumen.svg?branch=1.1)](https://travis-ci.org/Nobox/lazy-strings-lumen)
+[![Build Status](https://travis-ci.org/Nobox/lazy-strings-lumen.svg?branch=1.2)](https://travis-ci.org/Nobox/lazy-strings-lumen)
 
 Lumen service provider for LazyStrings.
 
